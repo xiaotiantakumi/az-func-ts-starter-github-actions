@@ -39,7 +39,10 @@ jobs:
       
       - name: 'Show Docker Compose log'
         run: |
+            pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+            cd ./docker
             docker compose logs
+            popd
   
       - name: 'Run tests'
         run: |
