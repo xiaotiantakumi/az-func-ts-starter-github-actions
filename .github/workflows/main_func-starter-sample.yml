@@ -35,7 +35,7 @@ jobs:
   
       - name: 'Run Docker Compose'
         run: |
-            docker compose up -d --wait
+            docker compose up -f ./docker/docker-compose.yml -d --wait
       
       - name: 'Show Docker Compose log'
         run: |
