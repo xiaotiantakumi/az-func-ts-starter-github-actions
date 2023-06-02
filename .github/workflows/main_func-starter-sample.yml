@@ -35,12 +35,12 @@ jobs:
   
       - name: 'Run Docker Compose'
         run: |
-            docker-compose -f ./docker/docker-compose.yml up -d
+            docker-compose -f ./docker/docker-compose.yml up -d --wait
   
       - name: 'Run tests'
         run: |
             pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-            npm run test --if-present
+            npm run test:dev --if-present
             popd
 
       - name: 'Run Azure Functions Action'
