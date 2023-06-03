@@ -47,7 +47,7 @@ jobs:
       - name: 'Run tests'
         run: |
             pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-            npm run test:dev --if-present
+            npm run test --if-present
             popd
 
       - name: 'Run Azure Functions Action'
